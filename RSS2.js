@@ -102,10 +102,11 @@ function RSS2assembleXMLUrl(xmlUrl, xslUrl){
     	return xmls.serializeToString(result);
 
   	} else { // Internet Explorer
-  		xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
-  		xmlDoc.async=false;
-  		xmlDoc.loadXML(xsl); 
-  		return xmlDoc.transformNode(xslDoc);
+  		xml_Doc=new ActiveXObject("Microsoft.XMLDOM");
+  		xml_Doc.async=false;
+  		xml_Doc.loadXML(xmlDoc.xml);
+
+  		return xml_Doc.transformNode(xslDoc);
   	}
 
 
