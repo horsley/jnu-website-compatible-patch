@@ -2,7 +2,7 @@
 ===================================
 
 ## 起因
-暨南大学官方网站首页（http://www.jnu.edu.cn）存在着兼容性问题，主要问题是在Chrome 等浏览器中无法加载首页滚动新闻。今儿无聊，选完课之后又被某同学问到为什么暨大首页的通知看不了。
+暨南大学官方网站首页[(http://www.jnu.edu.cn)](http://www.jnu.edu.cn)存在着兼容性问题，主要问题是在Chrome 等浏览器中无法加载首页滚动新闻。今儿无聊，选完课之后又被某同学问到为什么暨大首页的通知看不了。
 才想起来这是个被诟病已久的问题，官方一直没有解决，估计是javascript的问题，这一块正是我不熟悉的领域，于是想要探索一下如何解决。
 
 ## 问题描述与解决
@@ -18,7 +18,7 @@ chrome开发人员工具中提示
 
 经过查找相关资料，发现
 
-	document.load() is a part of an old version of the W3C DOM Level 3 Load & Save module. Can be used with document.async to indicate whether the request is synchronous or asynchronous (the default). As of at least Gecko 1.9, this no longer supports cross-site loading of documents (Use XMLHttpRequest instead).
+>document.load() is a part of an old version of the W3C DOM Level 3 Load & Save module. Can be used with document.async to indicate whether the request is synchronous or asynchronous (the default). As of at least Gecko 1.9, this no longer supports cross-site loading of documents (Use XMLHttpRequest instead).
 
 可能在这个方法已经在某些新型浏览器中废弃，可以选择采用XMLHttpRequest代替，使用兼容性的写法再做了一些修补，就正常了，其实是个小case
 
